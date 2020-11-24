@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "dogClassification",
+  "appName": "dog-classification-app",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
