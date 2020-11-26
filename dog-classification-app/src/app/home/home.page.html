@@ -1,5 +1,22 @@
-<div id="wrapper">
-  <h1>1. Take a photo of your dog</h1>
-  <a (click)="takePhoto()">Take photo</a>
-  <img #predictImg src="/assets/test.jpg" width="299px" height="299px">
+<div fxFill fxLayout="column" fxLayoutAlign="start center" id="wrapper">
+    <img src="/assets/icon.png">
+    <ion-spinner *ngIf="!isReady"></ion-spinner>
+    <ion-button color="light" size="large" *ngIf="isReady" (click)="takePhoto()">
+        <ion-icon name="camera-outline"></ion-icon>
+    </ion-button>
+    <img #predictImg [src]="imgSrc" id="predictImg">
+    <div *ngIf="breedPrediction">
+        <p>1. {{breedPrediction.firstPlace[0]}} - {{(breedPrediction.firstPlace[1] * 100) | number:'2.1-5'}}%</p>
+        <p>2. {{breedPrediction.secondPlace[0]}} - {{(breedPrediction.secondPlace[1] * 100) | number:'2.1-5'}}%</p>
+        <p>2. {{breedPrediction.thirdPlace[0]}} - {{(breedPrediction.thirdPlace[1] * 100) | number:'2.1-5'}}%</p>
+        <div fxLayout="row" fxLayoutAlign="start start">
+            <span>All Results</span>
+            <ion-toggle #allResults></ion-toggle>
+        </div>
+        <div *ngIf="allResults.checked">
+            <ol>
+                <li *ngFor="let item of breedPrediction.all">{{item[0]}} - {{(item[1] * 100) | number:'2.1-5'}}%</li>
+            </ol>
+        </div>
+    </div>
 </div>
