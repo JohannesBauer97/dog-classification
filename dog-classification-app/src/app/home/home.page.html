@@ -1,5 +1,5 @@
-<div fxFill fxLayout="column" fxLayoutAlign="start center" id="wrapper">
-    <img src="/assets/icon.png">
+<div fxFill fxLayout="column" fxLayoutAlign="start center" id="wrapper" fxLayoutGap="30px">
+    <img src="/assets/icon.png" id="logo">
     <ion-spinner *ngIf="!isReady"></ion-spinner>
     <ion-button color="light" size="large" *ngIf="isReady" (click)="takePhoto()">
         <ion-icon name="camera-outline"></ion-icon>

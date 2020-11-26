@@ -5,7 +5,7 @@
   "homepage": "https://johannes-bauer.de/",
   "scripts": {
     "serve": "ionic serve",
-    "app:ios": "ionic build --platform ios --prod",
+    "app:ios": "ionic capacitor build ios --prod",
     "app:ios:sync": "ionic capacitor sync ios",
     "app:ios:dev": "ionic capacitor run ios -l --external",
     "app:android": "ionic build --platform android --prod",
