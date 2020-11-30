@@ -6,6 +6,7 @@ import {HomePage} from './home.page';
 
 import {HomePageRoutingModule} from './home-routing.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {TutorialComponent} from './tutorial/tutorial.component';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
         HomePageRoutingModule,
         FlexLayoutModule
     ],
-    declarations: [HomePage],
+    declarations: [HomePage, TutorialComponent],
     providers: []
 })
 export class HomePageModule {

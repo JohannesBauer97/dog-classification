@@ -5,6 +5,8 @@ import {CameraResultType, CameraSource, Plugins} from '@capacitor/core';
 import * as tf from '@tensorflow/tfjs';
 import {GraphModel} from '@tensorflow/tfjs';
 import {BreedPrediction} from './breed-prediction';
+import {ModalController} from '@ionic/angular';
+import {TutorialComponent} from './tutorial/tutorial.component';
 
 
 @Component({
@@ -141,9 +143,17 @@ export class HomePage {
         'African_hunting_dog',
     ];
 
-    constructor() {
+    constructor(private modalController: ModalController) {
         this.imgSrc = '/assets/test.jpg';
+        this.presentModal();
         this.loadModel();
+    }
+
+    async presentModal() {
+        const modal = await this.modalController.create({
+            component: TutorialComponent,
+        });
+        return await modal.present();
     }
 
     async takePhoto(): Promise<void> {
