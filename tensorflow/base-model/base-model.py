@@ -9,9 +9,13 @@ import tensorflow as tf
 # Download Dataset
 # ==========================================
 image_dataset_url = "http://vision.stanford.edu/aditya86/ImageNetDogs/images.tar"
-images_dir = tf.keras.utils.get_file("Images", image_dataset_url, untar=True)
+images_dir = tf.keras.utils.get_file("Images",
+                                     image_dataset_url,
+                                     untar=True)
 annotations_dataset_url = "http://vision.stanford.edu/aditya86/ImageNetDogs/annotation.tar"
-annotations_dir = tf.keras.utils.get_file("Annotation", annotations_dataset_url, untar=True)
+annotations_dir = tf.keras.utils.get_file("Annotation",
+                                          annotations_dataset_url,
+                                          untar=True)
 
 print("Images:", images_dir)
 print("Annotation:", annotations_dir)
@@ -20,7 +24,9 @@ print("Annotation:", annotations_dir)
 dataset_images_dir = "images"
 if not os.path.exists(dataset_images_dir):
     print("Copying 4 breeds")
-    breeds = ["n02085620-Chihuahua", "n02106662-German_shepherd", "n02099712-Labrador_retriever",
+    breeds = ["n02085620-Chihuahua",
+              "n02106662-German_shepherd",
+              "n02099712-Labrador_retriever",
               "n02092339-Weimaraner"]
     for breed in breeds:
         src = os.path.join(images_dir, breed)
@@ -88,7 +94,8 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(num_classes)
 ])
 
-model.compile(optimizer='adam', loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
 model.summary()
 
