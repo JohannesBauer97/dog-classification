@@ -1,5 +1,3 @@
-# Base Model (3 Breeds)
+# Base Model
 
-This folder contains a smaller neural network which classifies **3 dog breeds**.
-
-The base model is used to check general code implementations.
+One base model extended with different methods to see the effect.
