@@ -1,12 +1,9 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
-import pathlib
 import xml.etree.ElementTree as et
 import os
 from PIL import Image
-import sys
-import time
 
 # ==========================================
 # Download Dataset
